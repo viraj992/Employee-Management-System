@@ -10,19 +10,19 @@ const EmployeeDashboard = ({data}) => {
         {
             icon: CalendarIcon,
             value : data.currentMonthAttendance,
-            title : "Days Presenet",
+            title : "Days Present",
             subtitle : "This month",
         },
         {
             icon: FileTextIcon,
             value : data.pendingLeaves,
-            titlle : "Pending Leaves",
+            title : "Pending Leaves",
             subtitle : "Awaiting approval",
         },
         {
             icon: DollarSignIcon,
             value : data.latestPayslip ? `$${data.latestPayslip.netSalary?.toLocaleString()}` : "N/A",
-            titlle : "Latest Payslip",
+            title : "Latest Payslip",
             subtitle : "Most recent payout",
         },
     ]
@@ -37,14 +37,17 @@ const EmployeeDashboard = ({data}) => {
             </p>
         </div>
 
+        {/* Cards part */}
         <div className='grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-5'>
             {cards.map((card, index)=>(
                 <div key={index} className='card card-hover p-5 sm:p-6 relative overflow-hidden group flex items-center justify-between'>
-                    <div>
+                    {/* left - title + value (justify-between)*/}
+                    <div>  {/* Left Side Highlight Line */}
                         <div className='absolute left-0 top-0 bottom-0 w-1 rounded-r-full bg-slate-500/70 group-hover:bg-indigo-500/70'/>
                         <p className='text-sm font-medium text-slate-700 '>{card.title}</p>
                         <p className='text-2xl font-bold text-slate-900'>{card.value}</p>
                     </div>
+                    {/* right - icon */}
                     <card.icon className="size-10 p-2.5 rounded-lg bg-slate-100 text-slate-600 group-hover:bg-indigo-50 group-hover:text-indigo-600 transition-colors duration-200"/>
                 </div>
             ))}
