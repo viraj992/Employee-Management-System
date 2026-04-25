@@ -17,7 +17,7 @@ const Sidebar = () => {
     setMobileOpen(false)
   },[pathname])
 
-  const role = "" || "Employee";
+  const role = "ADMIN" || "Employee";
 
   const navItems = [
     {name : "Dashboard", href: "/dashboard" , icon: LayoutGridIcon},
@@ -37,7 +37,8 @@ const Sidebar = () => {
     <>
       {/* Brand Header */}
       <div className="px-5 pt-6 pb-5 border-b border-white/6">
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between"> {/*[Logo + Text] [xIcon]*/}
+          
           <div className="flex items-center gap-3">
             <UserIcon className="text-white size-7"/>
             <div>
@@ -50,6 +51,7 @@ const Sidebar = () => {
           <button onClick={()=> setMobileOpen(false)} className="lg:hidden text-slate-400 hover:text-white p-1">
             <XIcon size={20}/>
           </button>
+          
         </div>
       </div>
 
