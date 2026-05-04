@@ -21,7 +21,7 @@ const CheckingButton = ({todayRecord, onAction}) => {
         )
     }
 
-    const isCheckedIn = !!todayRecord?.isCheckedIn;
+    const isCheckedIn = !!todayRecord?.isCheckedIn; // undefined-> false
 
   return (
     <div className='absolute bottom-4 right-4 flex flex-col z-1'>

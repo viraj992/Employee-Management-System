@@ -1,6 +1,8 @@
 import { useCallback, useEffect, useState } from "react"
 import { dummyAttendanceData } from "../assets/assets"
 import CheckingButton from "../components/Attendance/CheckingButton"
+import AttendanceStats from "../components/Attendance/AttendanceStats"
+import AttendanceHistory from "../components/Attendance/AttendanceHistory"
 
 const Attendance = () => {
   const [history , setHistory] = useState([])
@@ -40,6 +42,14 @@ const Attendance = () => {
           <CheckingButton todayRecord={todayRecord} onAction={fetchData}/>
         </div>
       )}
+      
+      {/* Attendance Stats - 3 cards */}
+      <AttendanceStats history={history}/>
+
+      {/* Attendence History table */}
+      <AttendanceHistory history={history}/>
+
+
     </div>
   )
 }
